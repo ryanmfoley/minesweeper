@@ -54,7 +54,6 @@ h2 {
 	grid-template-rows: repeat(15, 40px);
     cursor: pointer;
 	background-color: lightgray;
-	/* border: 5px outset gray; */
 	border: 5px solid gray;
 }
 
@@ -79,9 +78,9 @@ h2 {
 }
 
 #modal-lose {
+    display: none;
 	margin-top: 4px;
 	margin-left: 4px;
-    display: none;
 	position: absolute;
 	width: 605px;
 	height: 605px;
