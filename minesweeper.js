@@ -156,7 +156,6 @@ let startGame = false;
 
 // Build Grid
 let grid = setupGrid(15, 15);
-// let grid
 
 // Grab cells
 const cells = document.querySelector('.grid');
