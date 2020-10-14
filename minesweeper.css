@@ -66,25 +66,25 @@ h2 {
 	align-items: center;
 	border: 2px solid white;
 	font-size: 32px;
-}.
+}
 
 #modal {
     display: none;
 	position: absolute;
-	width: 610px;
-	height: 610px;
+	width: 605px;
+	height: 605px;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 #modal-lose {
-	/* margin-top: 10px; */
+	margin-top: 4px;
+	margin-left: 4px;
     display: none;
-    /* display: grid; */
 	position: absolute;
-	width: 600px;
-	height: 600px;
+	width: 605px;
+	height: 605px;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
