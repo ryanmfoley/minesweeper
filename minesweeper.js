@@ -102,8 +102,8 @@ function revealMines() {
 			if (cell.isMine === true) {
 				// Create and display mines
 				const mine = document.createElement('img');
-                mine.src = 'images/mine-icon.png';
-                // Reset cell and append mine
+				mine.src = 'images/mine-icon.png';
+				// Reset cell and append mine
 				cell.cellBox.innerHTML = '';
 				cell.cellBox.append(mine);
 			}
@@ -166,10 +166,10 @@ setMinesButton.addEventListener('click', (event) => {
 
 	// Clear grid
 	closeModal();
-    clearGrid(15, 15);
-    
-    // Create grid objects
-    grid = setupGrid(15, 15);
+	clearGrid(15, 15);
+
+	// Create grid objects
+	grid = setupGrid(15, 15);
 
 	let mineCount = 0;
 	while (mineCount < 30) {
@@ -239,6 +239,35 @@ cells.addEventListener(
 	false
 );
 
+// Listen for press and hold for mobile devices
+cells.addEventListener(
+	'long-press',
+	(event) => {
+		event.preventDefault();
+
+		if (startGame == true) {
+			// Grab the object of the cell that was clicked
+			const cell = selectCell(event.target);
+
+			// Check if cell is open or closed
+			if (cell.isOpen === false) {
+				// Toggle lock/unlock
+				if (cell.isLocked !== true) {
+					cell.isLocked = true;
+					cell.cellBox.textContent = '!';
+					cell.cellBox.style.color = 'red';
+				} else {
+					cell.isLocked = false;
+					cell.cellBox.innerHTML = '';
+					cell.cellBox.style.color = 'black';
+				}
+				return false;
+			}
+		}
+	},
+	false
+);
+
 cells.addEventListener('click', (event) => {
 	event.preventDefault;
 	checkWin();
@@ -254,12 +283,21 @@ cells.addEventListener(
 	false
 );
 
-cells.addEventListener(
-	'long-press',
-	(event) => {
-		event.preventDefault();
-		checkWin();
-		return false;
-	},
-	false
-);
+// cells.addEventListener('long-press', (event) => {
+// 		event.preventDefault();
+// 		checkWin();
+// 		return false;
+// 	},
+// 	false
+// );
+
+// cells.addEventListener(
+// 	'long-press',
+// 	(event) => {
+// 		event.preventDefault();
+// 		console.log('long-press');
+		
+// 		return false;
+// 	},
+// 	false
+// );
