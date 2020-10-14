@@ -253,3 +253,13 @@ cells.addEventListener(
 	},
 	false
 );
+
+cells.addEventListener(
+	'long-press',
+	(event) => {
+		event.preventDefault();
+		checkWin();
+		return false;
+	},
+	false
+);
