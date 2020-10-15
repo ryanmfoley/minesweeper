@@ -102,9 +102,16 @@ function revealMines() {
 			if (cell.isMine === true) {
 				// Create and display mines
 				const mine = document.createElement('img');
-				mine.src = 'images/mine-icon.png';
-				// Reset cell and append mine
-				cell.cellBox.innerHTML = '';
+				mine.src = 'images/mine.png';
+				if (window.screen.width < 469) {
+					mine.width = 20
+				} else if (window.screen.width < 750) {
+					mine.width = 30
+				} else {
+					mine.width = 40
+				}
+					// Reset cell and append mine
+					cell.cellBox.innerHTML = '';
 				cell.cellBox.append(mine);
 			}
 		});
