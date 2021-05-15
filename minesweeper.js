@@ -135,31 +135,6 @@ function handleRightClick(e) {
 	}
 }
 
-function handleLongPress(e) {
-	e.preventDefault()
-
-	if (gameStarted == true) {
-		// Grab the object of the cell that was clicked //
-		const selectedCell = selectCell(this)
-
-		// Check if cell is open or closed //
-		if (selectedCell.revealed === false) {
-			// Toggle lock/unlock //
-			if (selectedCell.isLocked !== true) {
-				selectedCell.isLocked = true
-				selectedCell.cellBox.textContent = '!'
-				selectedCell.cellBox.style.color = 'red'
-			} else {
-				selectedCell.isLocked = false
-				selectedCell.cellBox.innerHTML = ''
-				selectedCell.cellBox.style.color = 'black'
-			}
-
-			return false
-		}
-	}
-}
-
 function selectCell(cell) {
 	const cellRow = cell.classList[0].match(/\d+/)
 	const cellCol = cell.classList[1].match(/\d+/)
@@ -291,5 +266,5 @@ for (const cell of cells) {
 	cell.addEventListener('contextmenu', handleRightClick, false)
 
 	// Listen for press and hold for mobile devices //
-	cell.addEventListener('long-press', handleLongPress, false)
+	cell.addEventListener('long-press', handleRightClick, false)
 }
