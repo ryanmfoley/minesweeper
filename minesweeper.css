@@ -1,147 +1,125 @@
-body {
-	/* background-color: lightgray; */
-	  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+* {
+	box-sizing: border-box;
 }
 
-.container {
-	display: grid;
-	margin: auto;
-	grid-template-rows: 1fr 2fr;
-    justify-items: center;
-	align-items: center;
+body {
+	background: rgb(72, 72, 72);
+	font-family: helvetica;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 header {
-	display: grid;
-	height: 180px;
-	justify-items: center;
-	padding-bottom: 20px;
+	margin-bottom: 2.5vh;
+	text-align: center;
 }
 
-h1 {
+header h1 {
+	margin: 0;
 	font-family: 'Fredericka the Great', cursive;
-	font-size: 58px;
+	font-size: 10vh;
+	text-shadow: 0 0 7px white;
 }
 
-h2 {
-    font-size: 48px;
-    color: white;
+header #start-game-btn {
+	width: 6vh;
+	height: 6vh;
+	transition: box-shadow 0.1s ease-in 0.1s;
+	cursor: pointer;
 }
 
-#set-mines {
-	width: 40px;
-	height: 40px;
-	margin-bottom: 10px;
-    cursor: pointer;
-	background-size: cover;
+header #start-game-btn:hover {
+	box-shadow: 0 0 7px white;
+}
+
+header #start-game-btn:active {
+	transform: scale(0.98);
 }
 
 .grid {
-	display: grid;
+	box-sizing: content-box;
 	position: relative;
+	display: grid;
 	grid-template-columns: repeat(15, 1fr);
 	grid-template-rows: repeat(15, 1fr);
-    cursor: pointer;
-	background-color: lightgray;
-	border: 5px solid gray;
+	width: 72vh;
+	height: 72vh;
+	margin: auto;
+	background: lightgray;
+	border: 0.5vh solid rgb(36, 36, 36);
+	cursor: pointer;
 }
 
 .grid > div {
-	display: grid;
-	width: 20px;
-	height: 20px;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 16px;
-	border: 2px solid white;
+	width: calc(72vh / 15);
+	height: calc(72vh / 15);
+	margin: auto;
+	font-size: 3vh;
+	border: 0.1vh solid rgb(191, 191, 191);
 }
 
-/* .mines {
-	width: 20px;
-	height: 20px;
-} */
-
-#modal {
-    display: none;
-	position: absolute;
+.mine {
 	width: 100%;
 	height: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
-#modal-lose {
+.flag {
+	width: 75%;
+	height: 75%;
+}
+
+#game-results-modal {
 	display: none;
 	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.8);
+	font-size: 4vh;
+	font-weight: 500;
+	color: white;
 }
 
-#modal img {
-    width: 345px;
+.victory-banner {
+	width: 100%;
 }
 
-/* Portrait */
-@media only screen 
-  and (min-device-width: 469px) {
-  /* and (-webkit-min-device-pixel-ratio: 2) */
-  /* and (orientation: portrait) { */
+@media (orientation: portrait) {
 	header {
-		height: 200px;
-		padding-bottom: 20px;
+		margin-top: 30px;
 	}
-	h1 {
-		font-size: 68px;
-		margin-bottom: 20px;
-	 }
-	#set-mines {
-		width: 55px;
-		height: 55px;
-	}
-	.grid > div {
-		width: 30px;
-		height: 30px;
-		font-size: 22px;
-	}
-	#modal img {
-		width: 415px;
-	}
-}
 
-/* Portrait */
-@media only screen 
-  and (min-device-width: 750px) {
-  /* and (-webkit-min-device-pixel-ratio: 2) */
-  /* and (orientation: portrait) { */
-	header {
-		height: 260px;
-		padding-bottom: 80px;
+	header h1 {
+		font-size: max(10vw, 50px);
 	}
-	h1 {
-	    font-size: 115px;
-	 }
-	 #set-mines {
-		 width: 70px;
-		 height: 70px;
-	 }
+
+	header #start-game-btn {
+		width: max(8vw, 48px);
+		height: max(8vw, 48px);
+		margin: 10px;
+	}
+
+	.grid {
+		width: 95vw;
+		height: 95vw;
+		border: 0.5vw solid rgb(36, 36, 36);
+	}
+
 	.grid > div {
-		width: 40px;
-		height: 40px;
-		font-size: 32px;
+		width: calc(95vw / 15);
+		height: calc(95vw / 15);
+		font-size: 3vw;
 	}
-	#modal img {
-		width: 625px;
+
+	#game-results-modal {
+		font-size: 5vw;
 	}
 }
