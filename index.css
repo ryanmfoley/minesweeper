@@ -3,7 +3,9 @@
 }
 
 body {
+	background: rgb(50, 50, 50);
 	background: rgb(72, 72, 72);
+	background: #1d4783;
 	font-family: helvetica;
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
