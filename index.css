@@ -58,10 +58,10 @@ header #start-game-btn:active {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: calc(72vh / 15);
-	height: calc(72vh / 15);
+	width: 100%;
+	height: 100%;
 	margin: auto;
-	font-size: 3vh;
+	font-size: 3vmin;
 	border: 0.1vh solid rgb(191, 191, 191);
 }
 
@@ -83,7 +83,7 @@ header #start-game-btn:active {
 	justify-content: center;
 	align-items: center;
 	background: rgba(0, 0, 0, 0.8);
-	font-size: 4vh;
+	font-size: 4vmin;
 	font-weight: 500;
 	color: white;
 }
@@ -113,17 +113,5 @@ header #start-game-btn:active {
 		max-width: 720px;
 		max-height: 720px;
 		border: 0.5vw solid rgb(36, 36, 36);
-	}
-
-	.grid > div {
-		width: calc(95vw / 15);
-		height: calc(95vw / 15);
-		max-width: calc(720px / 15);
-		max-height: calc(720px / 15);
-		font-size: 3vw;
-	}
-
-	#game-results-modal {
-		font-size: 5vw;
 	}
 }
