@@ -3,8 +3,6 @@
 }
 
 body {
-	background: rgb(50, 50, 50);
-	background: rgb(72, 72, 72);
 	background: #1d4783;
 	font-family: helvetica;
 	-webkit-touch-callout: none; /* iOS Safari */
@@ -24,7 +22,7 @@ header h1 {
 	margin: 0;
 	font-family: 'Fredericka the Great', cursive;
 	font-size: 10vh;
-	text-shadow: 0 0 7px white;
+	text-shadow: 0px 0px 10px white;
 }
 
 header #start-game-btn {
@@ -112,12 +110,16 @@ header #start-game-btn:active {
 	.grid {
 		width: 95vw;
 		height: 95vw;
+		max-width: 720px;
+		max-height: 720px;
 		border: 0.5vw solid rgb(36, 36, 36);
 	}
 
 	.grid > div {
 		width: calc(95vw / 15);
 		height: calc(95vw / 15);
+		max-width: calc(720px / 15);
+		max-height: calc(720px / 15);
 		font-size: 3vw;
 	}
 
